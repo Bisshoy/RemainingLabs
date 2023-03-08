@@ -16,8 +16,8 @@ struct planeStats
 
 const int SIZE = 12;
 string months[SIZE] = {"January", "February", "March", "April", 
-                         "May", "June", "July", "August", "September", 
-                         "October", "November", "December"};
+                       "May", "June", "July", "August", "September", 
+                       "October", "November", "December"};
 
 void getPlaneStats(planeStats*, int);
 
@@ -27,8 +27,8 @@ int main()
 
     getPlaneStats(arr, SIZE);
 
-    int totalLanded = 0;
-    int totalDeparted = 0;
+    float totalLanded = 0.0;
+    float totalDeparted = 0.0;
     int greatestLanded = 0;
     int fewestLanded = 0;
 
@@ -49,10 +49,10 @@ int main()
     }
 
     cout << "Total planes landed in year: " << totalLanded << endl;
-    cout << "Average planes landed per month: " << (static_cast<float>(totalLanded) / SIZE) << endl;
+    cout << "Average planes landed per month: " << (totalLanded / SIZE) << endl;
 
     cout << "Total planes departed in year: " << totalDeparted << endl;
-    cout << "Average planes departed per month: " << (static_cast<float>(totalDeparted) / SIZE) << endl;
+    cout << "Average planes departed per month: " << (totalDeparted / SIZE) << endl;
 
     cout << "Most planes landed in a day: " << arr[greatestLanded].greatestPlanes << endl;
     cout << "Fewest planes landed in a day: " << arr[fewestLanded].leastPlanes << endl;
