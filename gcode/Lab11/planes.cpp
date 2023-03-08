@@ -19,7 +19,7 @@ string months[SIZE] = {"January", "February", "March", "April",
                          "May", "June", "July", "August", "September", 
                          "October", "November", "December"};
 
-void getPlaneStats(planeStats[], int);
+void getPlaneStats(planeStats*, int);
 
 int main()
 {
@@ -61,24 +61,27 @@ int main()
 
 }
 
-void getPlaneStats(planeStats ex[], int m)
+void getPlaneStats(planeStats* ex, int m)
 {
 
     for (int i = 0; i < m; i++) {
         cout << "Enter the total number of planes that landed in " << months[i] << ": ";
-        cin >> ex[i].landed;
+        cin >> ex->landed;
 
         cout << "Enter the total number of planes that departed in " << months[i] << ": ";
-        cin >> ex[i].departed;
+        cin >> ex->departed;
 
         cout << "Enter the most planes that landed in " << months[i] << ": ";
-        cin >> ex[i].greatestPlanes;
+        cin >> ex->greatestPlanes;
 
         cout << "Enter the fewest planes that landed in " << months[i] << ": ";
-        cin >> ex[i].leastPlanes;
+        cin >> ex->leastPlanes;
+
+        ex++;
 
         cout << endl;
 
     }
 
 }
+
